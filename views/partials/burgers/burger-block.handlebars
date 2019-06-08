@@ -1,9 +1,9 @@
-<li>
-	{{name}}
+<ul>
+	<div id="burger-names">{{name}}</div>
 
 	{{#if eat}}<button class="change-eat" data-id="{{id}}" data-neweat="{{eat}}">
 		EAT!
 	</button>{{/if}}
 
 	{{#unless eat}}<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>{{/unless}}
-</li>
+</ul>
