@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/KevinBevil/Burger.git"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
