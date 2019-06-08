@@ -1,23 +1,35 @@
 body {
-   background-color: red;
+   background-color: rgb(241, 215, 211);
 }
 
-li {
+.col-4 {
+   background-color: #FBA100;
+   border: 10px solid rgb(179, 113, 0);
+   padding: 20px;
+}
+ul {
    padding: 5px;
    margin: 5px;
-   background: #faebd7;
 }
 
+h2 {
+
+}
 .label {
    font-weight: bold;
 }
 
-.create-update-form {
-   padding: 5px;
+.create-form {
+   padding: 20px;
+
    margin: 5px;
-   background: aqua;
+   background: #6BBAA7;
+   border: 10px solid rgb(67, 116, 104);
+
 }
 
 .form-group {
+   padding: 20px;
+
    margin-bottom: 5px;
 }
