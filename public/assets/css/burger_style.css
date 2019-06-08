@@ -2,34 +2,54 @@ body {
    background-color: rgb(241, 215, 211);
 }
 
-.col-4 {
+h2 {
+   font-family: 'Do Hyeon', sans-serif;
+}
+.col-md {
    background-color: #FBA100;
    border: 10px solid rgb(179, 113, 0);
    padding: 20px;
 }
-ul {
+
+li {
    padding: 5px;
    margin: 5px;
 }
 
-h2 {
-
+button {
+   background-color: rgb(119, 199, 119);
+   display: inline-block;
+   padding: 0.35em 1.2em;
+   border: 0.1em solid #FFFFFF;
+   margin: 0 0.3em 0.3em 0;
+   border-radius: 0.12em;
+   box-sizing: border-box;
+   text-decoration: none;
+   font-family: 'Roboto', sans-serif;
+   font-weight: 300;
+   color: rgb(255, 255, 255);
+   text-align: center;
+   transition: all 0.2s;
 }
+
+button:hover {
+   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+   color: #000000;
+   background-color: #FFFFFF;
+}
+
 .label {
    font-weight: bold;
 }
 
 .create-form {
    padding: 20px;
-
    margin: 5px;
    background: #6BBAA7;
    border: 10px solid rgb(67, 116, 104);
-
 }
 
 .form-group {
    padding: 20px;
-
    margin-bottom: 5px;
 }
