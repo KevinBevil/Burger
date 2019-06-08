@@ -5,6 +5,10 @@ body {
    background-size: 2000px;
 }
 
+.container {
+   margin-top: 20px;
+}
+
 label {
    font-weight: bold;
 }
@@ -30,6 +34,8 @@ h2 {
    background-size: 200px;
    margin-top: 20px;
    background-repeat: no-repeat;
+   border-top: 3px solid rgb(179, 113, 0);
+   border-bottom: 3px solid rgb(179, 113, 0);
 }
 
 #burger-names {
