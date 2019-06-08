@@ -20,6 +20,7 @@ app.set("view engine", "handlebars");
 var routes = require("./controllers/burgers_controllers.js");
 
 app.use(routes);
+app.use(express.static(__dirname + '/public'));
 
 // Starts our server listening to requests
 app.listen(PORT, function () {

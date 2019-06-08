@@ -1,4 +1,4 @@
-var connection = require("./connection");
+var connection = require("../config/connection.js");
 
 // Helper function found in previous activity
 function printQuestionMarks(num) {
@@ -28,14 +28,17 @@ function objToSql(ob) {
 
 // The orm object will house our SQL methods
 var orm = {
-   selectAll: function (table, cb) {
-      connection.query("SELECT * FROM " + table + ";", function (err, result) {
-         if (err) throw err;
+   all: function (tableInput, cb) {
+      var queryString = "SELECT * FROM " + tableInput + ";";
+      connection.query(queryString, function (err, result) {
+         if (err) {
+            throw err;
+         }
          cb(result);
       });
    },
-   insertOne: function (table, col, val, cb) {
-      var queryString = "INSERT INTO " + table;
+   create: function (tableInput, col, vals, cb) {
+      var queryString = "INSERT INTO " + tableInput;
 
       queryString += " (";
       queryString += col.toString();
@@ -46,7 +49,7 @@ var orm = {
 
       console.log(queryString);
 
-      connection.query(queryString, val, function (err, result) {
+      connection.query(queryString, vals, function (err, result) {
          if (err) {
             throw err;
          }
@@ -54,11 +57,11 @@ var orm = {
          cb(result);
       });
    },
-   updateOne: function (table, objColVal, condition, cb) {
-      var queryString = "UPDATE " + table;
+   update: function (tableInput, objColVals, condition, cb) {
+      var queryString = "UPDATE " + tableInput;
 
       queryString += " SET ";
-      queryString += objToSql(objColVal);
+      queryString += objToSql(objColVals);
       queryString += " WHERE ";
       queryString += condition;
 
@@ -67,6 +70,19 @@ var orm = {
          if (err) {
             throw err;
          }
+         cb(result);
+      });
+   },
+   delete: function (table, condition, cb) {
+      var queryString = "DELETE FROM " + table;
+      queryString += " WHERE ";
+      queryString += condition;
+
+      connection.query(queryString, function (err, result) {
+         if (err) {
+            throw err;
+         }
+
          cb(result);
       });
    }
